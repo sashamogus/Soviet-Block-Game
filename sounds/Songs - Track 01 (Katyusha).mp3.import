@@ -1,0 +1,19 @@
+[remap]
+
+importer="mp3"
+type="AudioStreamMP3"
+uid="uid://bqbvv06q4kc8i"
+path="res://.godot/imported/Songs - Track 01 (Katyusha).mp3-92c6ee800abdfadf6c12208ee5d422f9.mp3str"
+
+[deps]
+
+source_file="res://sounds/Songs - Track 01 (Katyusha).mp3"
+dest_files=["res://.godot/imported/Songs - Track 01 (Katyusha).mp3-92c6ee800abdfadf6c12208ee5d422f9.mp3str"]
+
+[params]
+
+loop=true
+loop_offset=0.0
+bpm=0.0
+beat_count=0
+bar_beats=4

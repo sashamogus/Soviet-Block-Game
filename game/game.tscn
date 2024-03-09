@@ -1,0 +1,56 @@
+[gd_scene load_steps=13 format=3 uid="uid://b3aocseqros1p"]
+
+[ext_resource type="Script" path="res://game/game.gd" id="1_nrwu7"]
+[ext_resource type="AudioStream" uid="uid://bqbvv06q4kc8i" path="res://sounds/Songs - Track 01 (Katyusha).mp3" id="5_w3xey"]
+[ext_resource type="AudioStream" uid="uid://f66ojsxksfnd" path="res://sounds/Songs - Track 09 (Fall).wav" id="7_5xevp"]
+[ext_resource type="AudioStream" uid="uid://dmw3c15k0v0vt" path="res://sounds/Songs - Track 12 (Score Penalty).wav" id="8_1mgpf"]
+[ext_resource type="AudioStream" uid="uid://d20k8ldwgy7e3" path="res://sounds/Songs - Track 10 (Clear).wav" id="8_6e812"]
+[ext_resource type="AudioStream" uid="uid://b1wd7p2wpvron" path="res://sounds/Songs - Track 11 (Score Bonus).wav" id="8_gc36m"]
+[ext_resource type="PackedScene" uid="uid://culyq6edo2el5" path="res://game/piece/piece_game.tscn" id="8_nxvcg"]
+[ext_resource type="AudioStream" uid="uid://dylnk71fmm6fe" path="res://sounds/Songs - Track 02 (Level Clear).wav" id="9_eg51j"]
+[ext_resource type="AudioStream" uid="uid://bfw0arhftcjme" path="res://sounds/Songs - Track 14 (Rebirth).wav" id="9_vslll"]
+[ext_resource type="AudioStream" uid="uid://ba0kujfgun373" path="res://sounds/Songs - Track 03 (Press Start).wav" id="10_mw4ih"]
+[ext_resource type="AudioStream" uid="uid://cd8khu2hh8vo6" path="res://sounds/Songs - Track 15 (Game Over).wav" id="11_b15ik"]
+[ext_resource type="AudioStream" uid="uid://dmnqh4fru2cj1" path="res://sounds/Songs - Track 16 (Game Clear).mp3" id="12_anjyj"]
+
+[node name="Game" type="Node2D"]
+z_index = -2
+scale = Vector2(1.5, 1.5)
+script = ExtResource("1_nrwu7")
+
+[node name="PieceGame" parent="." instance=ExtResource("8_nxvcg")]
+
+[node name="Sounds" type="Node" parent="."]
+
+[node name="BGM" type="AudioStreamPlayer2D" parent="Sounds"]
+stream = ExtResource("5_w3xey")
+
+[node name="Fall" type="AudioStreamPlayer2D" parent="Sounds"]
+stream = ExtResource("7_5xevp")
+
+[node name="Clear" type="AudioStreamPlayer2D" parent="Sounds"]
+stream = ExtResource("8_6e812")
+
+[node name="ClearOneBlock" type="AudioStreamPlayer2D" parent="Sounds"]
+stream = ExtResource("8_1mgpf")
+
+[node name="Rebirth" type="AudioStreamPlayer2D" parent="Sounds"]
+stream = ExtResource("9_vslll")
+
+[node name="Bonus" type="AudioStreamPlayer2D" parent="Sounds"]
+stream = ExtResource("8_gc36m")
+
+[node name="Penalty" type="AudioStreamPlayer2D" parent="Sounds"]
+stream = ExtResource("8_1mgpf")
+
+[node name="ClearJingle" type="AudioStreamPlayer2D" parent="Sounds"]
+stream = ExtResource("9_eg51j")
+
+[node name="PressStart" type="AudioStreamPlayer2D" parent="Sounds"]
+stream = ExtResource("10_mw4ih")
+
+[node name="GameOver" type="AudioStreamPlayer2D" parent="Sounds"]
+stream = ExtResource("11_b15ik")
+
+[node name="GameClear" type="AudioStreamPlayer2D" parent="Sounds"]
+stream = ExtResource("12_anjyj")

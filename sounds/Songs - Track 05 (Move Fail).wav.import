@@ -1,0 +1,24 @@
+[remap]
+
+importer="wav"
+type="AudioStreamWAV"
+uid="uid://514jx6vff4wb"
+path="res://.godot/imported/Songs - Track 05 (Move Fail).wav-e277c99364b756218cfe378b48e54dfd.sample"
+
+[deps]
+
+source_file="res://sounds/Songs - Track 05 (Move Fail).wav"
+dest_files=["res://.godot/imported/Songs - Track 05 (Move Fail).wav-e277c99364b756218cfe378b48e54dfd.sample"]
+
+[params]
+
+force/8_bit=false
+force/mono=false
+force/max_rate=false
+force/max_rate_hz=44100
+edit/trim=false
+edit/normalize=false
+edit/loop_mode=0
+edit/loop_begin=0
+edit/loop_end=-1
+compress/mode=0

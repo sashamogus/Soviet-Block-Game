@@ -1,0 +1,192 @@
+[gd_scene load_steps=13 format=3 uid="uid://cax1k48fdj6ar"]
+
+[ext_resource type="Texture2D" uid="uid://k05pq4oo0gf1" path="res://crt_screen/crt.png" id="1_4k3xg"]
+[ext_resource type="Shader" path="res://crt_screen/crt.gdshader" id="2_5mqql"]
+[ext_resource type="Script" path="res://crt_screen/crt_screen.gd" id="2_c8431"]
+[ext_resource type="Texture2D" uid="uid://bqut1yxgrged5" path="res://icon.svg" id="3_mak7h"]
+[ext_resource type="Texture2D" uid="uid://ccvut700h6ava" path="res://alexey_pajitnov.png" id="5_xns7t"]
+[ext_resource type="PackedScene" uid="uid://b3aocseqros1p" path="res://game/game.tscn" id="6_g88vt"]
+[ext_resource type="TileSet" uid="uid://dopro1lkhjtm6" path="res://game/tileset/tileset.tres" id="7_cnr5k"]
+[ext_resource type="Script" path="res://game/nexts.gd" id="8_0h121"]
+[ext_resource type="FontFile" uid="uid://bq5g4duuk4087" path="res://fonts/PressStart2P-Regular.ttf" id="9_ocbnj"]
+
+[sub_resource type="StyleBoxTexture" id="StyleBoxTexture_qrdns"]
+texture = ExtResource("1_4k3xg")
+texture_margin_left = 81.0
+texture_margin_top = 81.0
+texture_margin_right = 81.0
+texture_margin_bottom = 81.0
+axis_stretch_horizontal = 2
+axis_stretch_vertical = 2
+
+[sub_resource type="Theme" id="Theme_kjy5l"]
+Panel/styles/panel = SubResource("StyleBoxTexture_qrdns")
+
+[sub_resource type="ShaderMaterial" id="ShaderMaterial_74er1"]
+shader = ExtResource("2_5mqql")
+shader_parameter/overlay = true
+shader_parameter/scanlines_opacity = 0.1
+shader_parameter/scanlines_width = 0.1
+shader_parameter/grille_opacity = 0.3
+shader_parameter/resolution = Vector2(640, 480)
+shader_parameter/pixelate = false
+shader_parameter/roll = false
+shader_parameter/roll_speed = 8.0
+shader_parameter/roll_size = 44.944
+shader_parameter/roll_variation = 1.8
+shader_parameter/distort_intensity = 0.05
+shader_parameter/noise_opacity = 0.022
+shader_parameter/noise_speed = 5.0
+shader_parameter/static_noise_intensity = 0.06
+shader_parameter/aberration = 0.00500005
+shader_parameter/brightness = 1.4
+shader_parameter/discolor = true
+shader_parameter/warp_amount = 1.0
+shader_parameter/clip_warp = false
+shader_parameter/vignette_intensity = 0.4
+shader_parameter/vignette_opacity = 0.5
+
+[node name="CrtScreen" type="Panel"]
+anchors_preset = 8
+anchor_left = 0.5
+anchor_top = 0.5
+anchor_right = 0.5
+anchor_bottom = 0.5
+offset_left = -320.0
+offset_top = -240.0
+offset_right = 320.0
+offset_bottom = 240.0
+grow_horizontal = 2
+grow_vertical = 2
+theme = SubResource("Theme_kjy5l")
+script = ExtResource("2_c8431")
+
+[node name="ColorRect" type="ColorRect" parent="."]
+z_index = -3
+layout_mode = 1
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+offset_left = 5.0
+offset_top = 5.0
+offset_right = -5.0
+offset_bottom = -5.0
+grow_horizontal = 2
+grow_vertical = 2
+color = Color(0.0941176, 0, 0, 1)
+
+[node name="Game" parent="." node_paths=PackedStringArray("nexts", "labels", "game_start_label") instance=ExtResource("6_g88vt")]
+z_index = -3
+position = Vector2(192, 112)
+nexts = NodePath("../Nexts")
+labels = NodePath("../Labels")
+game_start_label = NodePath("../GameStartLabel")
+
+[node name="Overlay" type="Sprite2D" parent="."]
+z_index = -1
+material = SubResource("ShaderMaterial_74er1")
+position = Vector2(320, 240)
+scale = Vector2(4.499, 3.138)
+texture = ExtResource("3_mak7h")
+
+[node name="TheLegend" type="Sprite2D" parent="Overlay"]
+modulate = Color(1, 1, 1, 0.0470588)
+z_index = -2
+scale = Vector2(0.673, 0.518)
+texture = ExtResource("5_xns7t")
+
+[node name="Nexts" type="TileMap" parent="."]
+position = Vector2(-144, 16)
+tile_set = ExtResource("7_cnr5k")
+format = 2
+layer_0/tile_data = PackedInt32Array(0, 1, 0, 65536, 1, 0, 131072, 1, 0, 196608, 1, 0, 262144, 1, 0, 327680, 1, 0, 393216, 1, 0, 458752, 1, 0, 524288, 1, 0, 589824, 1, 0, 655360, 1, 0, 720896, 1, 0, 786432, 1, 0, 851968, 1, 0, 917504, 1, 0, 983040, 1, 0, 1048576, 1, 0, 1114112, 1, 0, 1179648, 1, 0, 1245184, 1, 0, 1310720, 1, 0, 1, 1, 0, 2, 1, 0, 3, 1, 0, 4, 1, 0, 5, 1, 0, 393221, 1, 0, 786437, 1, 0, 1179653, 1, 0, 1376256, 1, 0, 1441792, 1, 0, 1507328, 1, 0, 393217, 1, 0, 786433, 1, 0, 1179649, 1, 0, 393218, 1, 0, 786434, 1, 0, 1179650, 1, 0, 393219, 1, 0, 786435, 1, 0, 1179651, 1, 0, 393220, 1, 0, 786436, 1, 0, 1179652, 1, 0, 6, 1, 0, 65542, 1, 0, 131078, 1, 0, 196614, 1, 0, 262150, 1, 0, 327686, 1, 0, 393222, 1, 0, 458758, 1, 0, 524294, 1, 0, 589830, 1, 0, 655366, 1, 0, 720902, 1, 0, 786438, 1, 0, 851974, 1, 0, 917510, 1, 0, 983046, 1, 0, 1048582, 1, 0, 1114118, 1, 0, 1179654, 1, 0, 1245190, 1, 0, 1310726, 1, 0, 1376262, 1, 0, 1441798, 1, 0, 1507334, 1, 0, 1572864, 1, 0, 1572865, 1, 0, 1572866, 1, 0, 1572867, 1, 0, 1572868, 1, 0, 1572869, 1, 0, 1572870, 1, 0)
+script = ExtResource("8_0h121")
+
+[node name="Label" type="Label" parent="Nexts"]
+anchors_preset = 7
+anchor_left = 0.5
+anchor_top = 1.0
+anchor_right = 0.5
+anchor_bottom = 1.0
+offset_left = 9.0
+offset_top = -23.0
+offset_right = 89.0
+grow_horizontal = 2
+grow_vertical = 0
+theme_override_fonts/font = ExtResource("9_ocbnj")
+text = "NEXTS"
+vertical_alignment = 2
+
+[node name="Labels" type="Control" parent="."]
+layout_mode = 1
+anchors_preset = 0
+offset_left = 650.0
+offset_right = 690.0
+offset_bottom = 40.0
+
+[node name="Score" type="Label" parent="Labels"]
+layout_mode = 0
+offset_right = 40.0
+offset_bottom = 23.0
+theme_override_fonts/font = ExtResource("9_ocbnj")
+text = "SCORE
+6969420"
+
+[node name="HiScore" type="Label" parent="Labels"]
+layout_mode = 0
+offset_top = 53.0
+offset_right = 128.0
+offset_bottom = 88.0
+theme_override_fonts/font = ExtResource("9_ocbnj")
+text = "HI-SCORE
+6969420"
+
+[node name="Lives" type="Label" parent="Labels"]
+layout_mode = 0
+offset_top = 106.0
+offset_right = 128.0
+offset_bottom = 141.0
+theme_override_fonts/font = ExtResource("9_ocbnj")
+text = "LIVES: 69"
+
+[node name="Level" type="Label" parent="Labels"]
+layout_mode = 0
+offset_top = 144.0
+offset_right = 128.0
+offset_bottom = 179.0
+theme_override_fonts/font = ExtResource("9_ocbnj")
+text = "LEVEL: 420"
+
+[node name="Goal" type="Label" parent="Labels"]
+layout_mode = 0
+offset_top = 179.0
+offset_right = 160.0
+offset_bottom = 214.0
+theme_override_fonts/font = ExtResource("9_ocbnj")
+text = "GOAL: 10/10"
+
+[node name="Time" type="Label" parent="Labels"]
+layout_mode = 0
+offset_top = 210.0
+offset_right = 176.0
+offset_bottom = 245.0
+theme_override_fonts/font = ExtResource("9_ocbnj")
+text = "TIME: 300"
+
+[node name="GameStartLabel" type="Label" parent="."]
+layout_mode = 1
+anchors_preset = 8
+anchor_left = 0.5
+anchor_top = 0.5
+anchor_right = 0.5
+anchor_bottom = 0.5
+offset_left = -150.0
+offset_top = -16.0
+offset_right = 170.0
+offset_bottom = 7.0
+grow_horizontal = 2
+grow_vertical = 2
+theme_override_fonts/font = ExtResource("9_ocbnj")
+text = "PRESS ENTER TO START"
+horizontal_alignment = 1
+vertical_alignment = 1

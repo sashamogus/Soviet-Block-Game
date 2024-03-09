@@ -1,0 +1,67 @@
+[gd_scene load_steps=9 format=3 uid="uid://culyq6edo2el5"]
+
+[ext_resource type="Script" path="res://game/piece/piece_game.gd" id="1_10qx5"]
+[ext_resource type="Texture2D" uid="uid://fbne87eln3c3" path="res://game/tileset/block0.png" id="2_myib3"]
+[ext_resource type="AudioStream" uid="uid://ew3l2j4k86eu" path="res://sounds/Songs - Track 04 (Move).wav" id="3_3heg2"]
+[ext_resource type="AudioStream" uid="uid://514jx6vff4wb" path="res://sounds/Songs - Track 05 (Move Fail).wav" id="4_ngcvx"]
+[ext_resource type="AudioStream" uid="uid://c6ruiqgqtlvpy" path="res://sounds/Songs - Track 06 (Rotate).wav" id="5_6qjn4"]
+[ext_resource type="AudioStream" uid="uid://bn05hm3volrf4" path="res://sounds/Songs - Track 07 (Rotate Fail).wav" id="6_fq1g2"]
+[ext_resource type="AudioStream" uid="uid://f5hkr87vq40x" path="res://sounds/Songs - Track 08 (Drop).wav" id="7_h7j5s"]
+[ext_resource type="AudioStream" uid="uid://cptg60570tm5w" path="res://sounds/Songs - Track 13 (Death).wav" id="8_bo4tr"]
+
+[node name="PieceGame" type="Node2D"]
+script = ExtResource("1_10qx5")
+
+[node name="Blocks" type="Node2D" parent="."]
+position = Vector2(8, 8)
+
+[node name="Block0" type="Sprite2D" parent="Blocks"]
+texture = ExtResource("2_myib3")
+
+[node name="Block1" type="Sprite2D" parent="Blocks"]
+texture = ExtResource("2_myib3")
+
+[node name="Block2" type="Sprite2D" parent="Blocks"]
+texture = ExtResource("2_myib3")
+
+[node name="Block3" type="Sprite2D" parent="Blocks"]
+texture = ExtResource("2_myib3")
+
+[node name="Ghosts" type="Node2D" parent="."]
+position = Vector2(8, 8)
+
+[node name="Ghost0" type="Sprite2D" parent="Ghosts"]
+modulate = Color(1, 1, 1, 0.3)
+texture = ExtResource("2_myib3")
+
+[node name="Ghost1" type="Sprite2D" parent="Ghosts"]
+modulate = Color(1, 1, 1, 0.3)
+texture = ExtResource("2_myib3")
+
+[node name="Ghost2" type="Sprite2D" parent="Ghosts"]
+modulate = Color(1, 1, 1, 0.3)
+texture = ExtResource("2_myib3")
+
+[node name="Ghost3" type="Sprite2D" parent="Ghosts"]
+modulate = Color(1, 1, 1, 0.3)
+texture = ExtResource("2_myib3")
+
+[node name="Sounds" type="Node" parent="."]
+
+[node name="Move" type="AudioStreamPlayer2D" parent="Sounds"]
+stream = ExtResource("3_3heg2")
+
+[node name="MoveFail" type="AudioStreamPlayer2D" parent="Sounds"]
+stream = ExtResource("4_ngcvx")
+
+[node name="Rotate" type="AudioStreamPlayer2D" parent="Sounds"]
+stream = ExtResource("5_6qjn4")
+
+[node name="RotateFail" type="AudioStreamPlayer2D" parent="Sounds"]
+stream = ExtResource("6_fq1g2")
+
+[node name="Drop" type="AudioStreamPlayer2D" parent="Sounds"]
+stream = ExtResource("7_h7j5s")
+
+[node name="Death" type="AudioStreamPlayer2D" parent="Sounds"]
+stream = ExtResource("8_bo4tr")
