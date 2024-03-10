@@ -79,7 +79,7 @@ func _process(delta: float):
 		Phase.PRESS_START:
 			if Input.is_action_just_pressed("start"):
 				score = 0
-				lives = 10
+				lives = 5
 				$Sounds/PressStart.play()
 				phase = Phase.START_PRESSED
 				_timer = 1.0
