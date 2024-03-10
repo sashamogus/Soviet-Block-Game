@@ -242,6 +242,7 @@ func _process(delta: float):
 				else:
 					if board_game.board.map_clear():
 						combo += 1
+						board_game.clear_mapped()
 						$Sounds/Clear.play()
 						phase = Phase.CLEAR
 						_timer = 0.5
@@ -261,7 +262,6 @@ func _process(delta: float):
 		Phase.CLEAR:
 			_timer -= delta
 			if _timer < 0.0:
-				board_game.clear_mapped()
 				score += board_game.board.clear_num*10*pow(2, combo - 1)
 				symbols_current = board_game.board.get_symbol_count()
 				phase = Phase.DROP

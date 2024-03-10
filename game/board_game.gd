@@ -1,5 +1,7 @@
 extends TileMap
 
+const ClearAnim = preload("res://game/clear_animation/clear_animation.tscn")
+
 
 @export var symbol_num: int = 10
 
@@ -82,6 +84,14 @@ func try_drop(down: Vector2i) -> bool:
 func clear_mapped():
 	board.clear_mapped()
 	refresh()
+	for y in board.size.y:
+		for x in board.size.x:
+			var pos = Vector2i(x, y)
+			var i = board.index(pos)
+			if board.clear_map[i]:
+				var inst = ClearAnim.instantiate()
+				inst.position = Vector2(pos) * 16 + Vector2.ONE*8
+				add_child(inst)
 
 
 func clear_one_block() -> bool:

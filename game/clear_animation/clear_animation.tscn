@@ -1,0 +1,38 @@
+[gd_scene load_steps=8 format=3 uid="uid://ss8s5kkqa4wk"]
+
+[ext_resource type="Texture2D" uid="uid://d3nosyior320t" path="res://game/clear_animation/clear1.png" id="1_ir7sv"]
+[ext_resource type="Texture2D" uid="uid://vvyj831gswmp" path="res://game/clear_animation/clear4.png" id="4_mrenb"]
+[ext_resource type="Texture2D" uid="uid://b73bs2pkktuwy" path="res://game/clear_animation/clear6.png" id="6_ktd4t"]
+[ext_resource type="Script" path="res://game/clear_animation/clear_animation.gd" id="6_vrvsx"]
+[ext_resource type="Texture2D" uid="uid://bpl638d8vrpvo" path="res://game/clear_animation/clear9.png" id="9_3m4uj"]
+[ext_resource type="Texture2D" uid="uid://hrwr8e5ikla0" path="res://game/clear_animation/clear10.png" id="10_1whcr"]
+
+[sub_resource type="SpriteFrames" id="SpriteFrames_wle3q"]
+animations = [{
+"frames": [{
+"duration": 4.0,
+"texture": ExtResource("1_ir7sv")
+}, {
+"duration": 1.0,
+"texture": ExtResource("4_mrenb")
+}, {
+"duration": 1.0,
+"texture": ExtResource("6_ktd4t")
+}, {
+"duration": 1.0,
+"texture": ExtResource("9_3m4uj")
+}, {
+"duration": 1.0,
+"texture": ExtResource("10_1whcr")
+}],
+"loop": false,
+"name": &"default",
+"speed": 15.0
+}]
+
+[node name="ClearAnimation" type="AnimatedSprite2D"]
+sprite_frames = SubResource("SpriteFrames_wle3q")
+autoplay = "default"
+frame = 4
+frame_progress = 1.0
+script = ExtResource("6_vrvsx")
