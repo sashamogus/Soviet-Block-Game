@@ -1,0 +1,19 @@
+[remap]
+
+importer="mp3"
+type="AudioStreamMP3"
+uid="uid://cw1rgwsosrxme"
+path="res://.godot/imported/Songs - Track 07 (Rotate Fail).mp3-2aa877b6214c91a0c3ee2cbca5ba5054.mp3str"
+
+[deps]
+
+source_file="res://sounds/Songs - Track 07 (Rotate Fail).mp3"
+dest_files=["res://.godot/imported/Songs - Track 07 (Rotate Fail).mp3-2aa877b6214c91a0c3ee2cbca5ba5054.mp3str"]
+
+[params]
+
+loop=false
+loop_offset=0
+bpm=0
+beat_count=0
+bar_beats=4

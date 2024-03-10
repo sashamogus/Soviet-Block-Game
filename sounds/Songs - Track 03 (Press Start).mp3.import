@@ -1,0 +1,19 @@
+[remap]
+
+importer="mp3"
+type="AudioStreamMP3"
+uid="uid://dgbc1oyw26r3g"
+path="res://.godot/imported/Songs - Track 03 (Press Start).mp3-d7635a4b49ee67d5d2ff8fc7b2e83c7f.mp3str"
+
+[deps]
+
+source_file="res://sounds/Songs - Track 03 (Press Start).mp3"
+dest_files=["res://.godot/imported/Songs - Track 03 (Press Start).mp3-d7635a4b49ee67d5d2ff8fc7b2e83c7f.mp3str"]
+
+[params]
+
+loop=false
+loop_offset=0
+bpm=0
+beat_count=0
+bar_beats=4
